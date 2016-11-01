@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{object.name}}</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static "style.css" %}">
+    </head>
+    <body>
+        <div class="header">
+            <span class="movie-title">{{object.name}}</span>
+            <div class="button-block">
+                <button class="btn btn-default imdb-btn" type="submit">
+                    <a class="fa fa-imdb" aria-hidden="true" href="{{object.imdb}}"></a>
+                </button>
+                <button class="btn btn-default refresh-btn" type="submit">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </button>
+                <button class="btn btn-default delete-btn" type="submit">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <div class="poster">
+            <img src="{{object.poster}}">
+        </div>
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static "script.js" %}"></script>
+    <script type="text/javascript">
+        var movieId = "{{object.id}}";
+    </script>
+</html>

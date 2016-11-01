@@ -1,0 +1,37 @@
+body {
+    background: black;
+}
+.header {
+    height: 100px;
+    color: white;
+    width: 100%;
+}
+.movie-title {
+    font-size: 30px;
+    position: absolute;
+    padding-top: 25px;
+    padding-left: 20px;
+}
+.button-block {
+    float: right;
+    padding-right: 10px;
+    padding-top: 30px;
+}
+.button-block button {
+    border-radius: 0;
+    font-size: 18px;
+}
+.button-block button a {
+    color: inherit;
+}
+.poster {
+    text-align: center;
+}
+.poster img {
+    height: calc(95vh - 100px);
+}
+.empty-content {
+    text-align: center;
+    color: white;
+    margin-top: 50vh;
+}
