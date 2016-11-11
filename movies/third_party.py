@@ -4,7 +4,7 @@ import requests
 
 class YouTube(object):
 
-    BASE_VIDEO_URL = "https://www.youtube.com/watch?v="
+    BASE_VIDEO_URL = "https://www.youtube.com/embed/"
     BASE_URL = "https://www.googleapis.com/youtube/v3/search"
     API_KEY = "AIzaSyCNiNYR8Ge9Gy3nSspZSVrmSTHS0S0Ms7Q"
     PARAMS = {

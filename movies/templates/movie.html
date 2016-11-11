@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{% static "style.css" %}">
+        <link rel="icon" type="image/png" href="{% static "favicon.ico" %}">
     </head>
     <body>
         <div class="header">
@@ -24,8 +25,13 @@
                 </button>
             </div>
         </div>
-        <div class="poster">
-            <img src="{{object.poster}}">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 poster">
+                <img src="{{object.poster}}">
+            </div>
+            <div class="col-md-6">
+                <iframe class="trailer" src={{object.trailer}}></iframe>
+            </div>
         </div>
     </body>
 
