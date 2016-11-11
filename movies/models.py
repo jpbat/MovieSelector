@@ -2,6 +2,8 @@ from imdbpie import Imdb
 
 from django.db import models
 
+from .third_party import YouTube
+
 
 class Genre(models.Model):
 
@@ -34,11 +36,15 @@ class MovieManager(models.Manager):
 
         imdb_movie = imdb.get_title_by_id(imdb_id)
 
+        # fetching trailer...
+        trailer = YouTube.search_trailer(imdb_movie.title)
+
         # creating movie instance
         movie = Movie.objects.create(
             imdb=url,
             name=imdb_movie.title,
             poster=imdb_movie.poster_url,
+            trailer=trailer,
         )
 
         # creating needed Genre instances
@@ -56,6 +62,7 @@ class Movie(models.Model):
     poster = models.URLField()
     created = models.DateTimeField(auto_now_add=True)
     watched = models.DateTimeField(null=True)
+    trailer = models.URLField(null=True)
 
     objects = MovieManager()
 
