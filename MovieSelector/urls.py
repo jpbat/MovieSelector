@@ -1,4 +1,4 @@
-"""MovieSelector URL Configuration
+"""MovieSelector URL Configuration.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -18,9 +18,13 @@ from django.contrib import admin
 
 import movies.views as movies_views
 
+from .views import RedirectToGitHub
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^random/', movies_views.GetMovie.as_view()),
     url(r'^add/', movies_views.AddMovie.as_view()),
     url(r'^remove/', movies_views.RemoveMovie.as_view()),
+    url(r'(.*)', RedirectToGitHub.as_view())
+
 ]
